@@ -30,4 +30,4 @@ services:
   
 # networks:
 #   global-network:
-#     external: true # Decommentare per utilizzare il progetto generale
+#     external: true # Decommentare per utilizzare il progetto totale
