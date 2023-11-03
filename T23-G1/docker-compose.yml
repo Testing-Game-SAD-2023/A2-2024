@@ -5,14 +5,14 @@ services:
     build: .
     expose:
       - 8080
-    # ports:
-    #   - "8081:8080"
+    ports:
+      - "8081:8080" # Commentare per utilizzare il progetto generale
     depends_on:
       - db
     environment:
       DB_URL: jdbc:mysql://db:3306/STUDENTSREPO
-    networks:
-      - global-network
+    # networks:
+    #   - global-network # Decommentare per utilizzare il progetto generale
 
   db:
     image: mysql:latest
@@ -25,9 +25,9 @@ services:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
       timeout: 20s
       retries: 10
-    networks:
-      - global-network
+    # networks:
+    #   - global-network # Decommentare per utilizzare il progetto generale
   
-networks:
-  global-network:
-    external: true
+# networks:
+#   global-network:
+#     external: true # Decommentare per utilizzare il progetto generale
